@@ -71,6 +71,18 @@
                                             <td>{{ $module->product }}</td>
                                             <td>{{ $module->level }}</td>
                                             <td>{{ $module->result }}</td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <a href="{{ route('edit.module', $module->id) }}"
+                                                        class="btn btn-sm btn-primary">Edit</a>
+                                                    <form action="{{ route('delete.module', $module->id) }}" method="POST"
+                                                        onsubmit="return confirm('Are you sure you want to delete this module?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                                    </form>
+                                                </div>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

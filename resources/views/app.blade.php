@@ -255,7 +255,7 @@
 
         <ul class="menu-footer">
             <li>
-                <form action="#" method="POST">
+                <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="logout-btn text-white w-100 text-start border-0 bg-transparent p-2">
                         <i class="fa fa-power-off"></i>
